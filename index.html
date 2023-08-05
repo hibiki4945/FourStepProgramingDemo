@@ -1,0 +1,969 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programing-Methods</title>
+    <script src="https://unpkg.com/@shaun/alpinejs-router@1.x.x/dist/es6.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body x-data x-init="$router.config({ mode: 'hash' })" class="fixed inset-0 flex flex-col text-gray-900">
+    <header class="flex-none h-20 px-8 flex flex-row items-center border-b">
+      <h1 class="text-2xl">Programing-Methods</h1>
+    </header>
+    <div class="flex-1 flex flex-row">
+      <aside class="text-2xl flex-none w-72 border-r">
+        <ul>
+          <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">概要</a></li>
+          <li id="primary_nav_wrap">
+            <ul class="z-50">
+              <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/1" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">一. 模組拆裝</a>
+                <ul>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/11" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">1. 模組拆分</a>
+                    <!-- <ul>
+                      <li><a href="#">模組拆裝-1-1</a>
+                        <ul>
+                          <li><a href="#">模組拆裝-1-1-1</a></li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/12" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">2. 模組組裝</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="primary_nav_wrap">
+            <ul class="z-50">
+              <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step2/1" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">二. 事項排程</a>
+                <ul>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step2/11" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">事項排程-1</a>
+                    <!-- <ul>
+                      <li><a href="#">事項排程-1-1</a>
+                        <ul>
+                          <li><a href="#">事項排程-1-1-1</a></li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step2/12" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">事項排程-2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="primary_nav_wrap">
+            <ul class="z-50">
+              <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step3/1" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">三. 動作流程</a>
+                <ul>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step3/11" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">動作流程-1</a>
+                    <!-- <ul>
+                      <li><a href="#">動作流程-1-1</a>
+                        <ul>
+                          <li><a href="#">動作流程-1-1-1</a></li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step3/12" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">動作流程-2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="primary_nav_wrap">
+            <ul class="z-50">
+              <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step4/1" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">四. 除錯流程</a>
+                <ul>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step4/11" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">除錯流程-1</a>
+                    <!-- <ul>
+                      <li><a href="#">除錯流程-1-1</a>
+                        <ul>
+                          <li><a href="#">除錯流程-1-1-1</a></li>
+                        </ul>
+                      </li>
+                    </ul> -->
+                  </li>
+                  <li><a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step4/12" class="px-8 py-4 flex flex-row items-center hover:bg-blue-100">除錯流程-2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <div class="flex-1 flex flex-col">
+        <div class="flex-1 relative">
+          <main class="absolute w-full h-full overflow-y-scroll">
+            <!-- <template x-route="" template.preload="/home.html"></template> -->
+            <!-- <template x-route="/" template.preload="/home.html"></template> -->
+            <template x-route="/">
+              <div class="px-16 py-4">
+                <p class="text-4xl">四步編程 :</p>
+                <p class="text-2xl">步驟一. 模組拆裝</p>
+                <p class="text-2xl">步驟二. 事項排程</p>
+                <p class="text-2xl">步驟三. 動作流程</p>
+                <p class="text-2xl">步驟四. 除錯流程</p>
+              </div>
+            </template>
+
+            <template x-route="/step1/:id(\d+)">
+              <div class="px-16 py-4">
+                <!-- (T)可當做 子路由 -->
+                <div class="flex" x-show="$router.params.id === '1'">
+                  <!-- step1-1 -->
+                  <a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/1" class="px-8 py-4 flex flex-row text-2xl items-center hover:bg-blue-100"></a>
+                  <div class="flex flex-wrap mt-12 m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                  >
+                      <div class="w-2/5 overflow-y-scroll">
+                          <h2 class="text-2xl">一. 模組拆裝</h2>
+                          <p>- 成品(可以是一個 程式 or 需求)拆分</p>
+                          <p>- 成品拆分 的流程 : </p>
+                          <p>      step1. 將1個模組 拆分成數個模組</p>
+                          <p>      step2. 確認 拆分完的數個模組 是否能組回 拆分前的模組</p>
+                          <p>      step3. 判斷 是否需要 再次拆分</p>
+                          <p>      step4. 如不再拆分 則切分結束</p>
+                          <p>        如繼續拆分 則對</p>
+                          <p>        拆分完的模組</p>
+                          <p>        分別再進行 step1-3</p>
+                          <p>        直到 不需再 進行拆分</p>
+                          <p>        則 拆分結束</p>
+                      </div>
+                      <img class="w-3/5" src="./img/01.png" alt="">
+                  </div>
+                  <a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/11" class="px-8 py-4 flex flex-row text-2xl items-center hover:bg-blue-100">下一頁</a>
+                </div>
+                <div class="flex" x-show="$router.params.id === '11'">
+                  <!-- step1-1-1 -->
+                  <a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/1" class="px-8 py-4 flex flex-row text-2xl items-center hover:bg-blue-100">上一頁</a>
+                  <div 
+                      x-data="{ currentTab: 1 }"
+                      class="flex flex-col bg-gradient-to-r"
+                  >
+                      <div class="m-auto flex flex-col items-center">
+                          <div class="container max-w-3xl px-4 flex flex-col">
+                              <!-- Tabs -->
+                              <ul class="flex mt-6">
+                                  <li>
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 1"
+                                          :class="currentTab === 1 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              切分0次
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 2"
+                                          :class="currentTab === 2 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              切分1次
+                                      </a>
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 3"
+                                          :class="currentTab === 3 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              切分2次
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 4"
+                                          :class="currentTab === 4 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              切分3次
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 5"
+                                          :class="currentTab === 5 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              切分4次?
+                                      </a>		
+                                  </li>
+                              </ul>
+                              
+                              <!-- Tabs content -->
+                              <div 
+                                  x-show="currentTab === 1"
+                                  class="flex flex-wrap m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                              <div class="w-2/5 h-72 overflow-y-scroll">
+                                <p>拆分0次 : </p>
+                                <p>1. 計算機</p>
+                              </div>
+                              <img class="w-3/5" src="./img/02.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 2"
+                                  class="flex flex-wrap m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                          >
+                              <div class="w-2/5 h-72 overflow-y-scroll">
+                                <p>拆分1次 : </p>
+                                <p>1. 計算機</p>
+                                    <span class="text-white" for="">___</span>
+                                    <span>1. 顯示框</span>
+                                    <br>
+                                    <span class="text-white" for="">___</span>
+                                    <span>2. 按鍵區</span>
+                              </div>
+                              <img class="w-3/5" src="./img/03.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 3"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>拆分2次 : </p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>2. 小數點</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>3. 負號</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>4. 科學符號</span>
+                                        <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字區</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>2. 計算符號區</span>
+                                        <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>3. 特殊功能區</span>
+                                        <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/04.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 4"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>拆分3次 : </p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 小數點</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 負號</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>4. 科學符號</span>
+                                            <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 數字'0'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 數字'1'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 數字'2'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 數字'3'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 數字'4'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>6. 數字'5'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>7. 數字'6'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>8. 數字'7'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>9. 數字'8'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>10. 數字'9'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>11. 數字'00'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>12. 數字'.'</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 計算符號區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 計算符號'+'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 計算符號'-'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 計算符號'x'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 計算符號'/'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 計算符號'='</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 特殊功能區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 刪除符號'AC'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 刪除符號'D'</span>
+                                                <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/05.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 5"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                      <p>- 以此 計算機程式 的複雜度</p>
+                                      <p>大約拆分3次 即可</p>
+                                      <p>(如有需要 也可繼續拆分)</p>
+                                      <p>- 拆分完模組(程式) 再來就是組裝了</p>
+                                      <p>- 分階段 做組裝</p>
+                                      <p>- (組裝的階段數 無限制)</p>
+                                      <p>以下 一樣以計算機為例</p>
+                                  </div>
+                                  <img class="w-3/5" src="./img/05.png" alt="">
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                  <a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/12" class="px-8 py-4 flex flex-row text-2xl items-center hover:bg-blue-100">下一頁</a>
+                </div>
+                <div class="flex" x-show="$router.params.id === '12'">
+                  <!-- step1-1-2 -->
+                  <a x-link.activity="{ exactActive: 'text-blue-600' }" href="/step1/11" class="px-8 py-4 flex flex-row text-2xl items-center hover:bg-blue-100">上一頁</a>
+                  <div 
+                      x-data="{ currentTab: 1 }"
+                      class="flex flex-col bg-gradient-to-r"
+                  >
+                      <div class="m-auto flex flex-col items-center">
+                          <div class="container max-w-3xl px-4 flex flex-col">
+                              <!-- Tabs -->
+                              <ul class="flex mt-6">
+                                  <li>
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 1"
+                                          :class="currentTab === 1 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase1
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 2"
+                                          :class="currentTab === 2 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase2
+                                      </a>
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 3"
+                                          :class="currentTab === 3 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase3
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 4"
+                                          :class="currentTab === 4 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase4
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 5"
+                                          :class="currentTab === 5 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase5
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 6"
+                                          :class="currentTab === 6 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase6
+                                      </a>		
+                                  </li>
+                                  <li class="ml-1">
+                                      <a 
+                                          href="#"
+                                          @click.prevent="currentTab = 7"
+                                          :class="currentTab === 7 ? 'bg-white' : 'bg-yellow-100'"
+                                          class="inline-flex justify-center items-center rounded-t py-4 px-6 font-medium transition"
+                                      >
+                                              phase7?
+                                      </a>		
+                                  </li>
+                              </ul>
+                              
+                              <!-- Tabs content -->
+                              <div 
+                                  x-show="currentTab === 1"
+                                  class="flex flex-wrap m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                              <div class="w-2/5 h-72 overflow-y-scroll">
+                                <p>phase1</p>
+                                <p>(新增 基本功能)</p>
+                                <p>1. 計算機</p>
+                                    <span class="text-white" for="">___</span>
+                                    <span>1. 顯示框</span>
+                                    <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字</span>
+                                        <br>
+                                    <span class="text-white" for="">___</span>
+                                    <span>2. 按鍵區</span>
+                                    <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字區</span>
+                                        <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>2. 數字'1'</span>
+                                            <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>2. 計算符號區</span>
+                                        <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>1. 計算符號'+'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>5. 計算符號'='</span>
+                                            <br>
+                              </div>
+                              <img class="w-3/5" src="./img/11.png" alt="">
+                          </div>
+                              <div 
+                                  x-show="currentTab === 2"
+                                  class="flex flex-wrap m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                              <div class="w-2/5 h-72 overflow-y-scroll">
+                                <p>phase2</p>
+                                <p>(新增 所有數字按鍵)</p>
+                                <p>1. 計算機</p>
+                                    <span class="text-white" for="">___</span>
+                                    <span>1. 顯示框</span>
+                                    <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字</span>
+                                        <br>
+                                    <span class="text-white" for="">___</span>
+                                    <span>2. 按鍵區</span>
+                                    <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>1. 數字區</span>
+                                        <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>1. 數字'0'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>2. 數字'1'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>3. 數字'2'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>4. 數字'3'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>5. 數字'4'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>6. 數字'5'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>7. 數字'6'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>8. 數字'7'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>9. 數字'8'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>10. 數字'9'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>11. 數字'00'</span>
+                                            <br>
+                                        <span class="text-white" for="">______</span>
+                                        <span>2. 計算符號區</span>
+                                        <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>1. 計算符號'+'</span>
+                                            <br>
+                                            <span class="text-white" for="">_________</span>
+                                            <span>5. 計算符號'='</span>
+                                            <br>
+                              </div>
+                              <img class="w-3/5" src="./img/12.png" alt="">
+                          </div>
+                              <div 
+                                  x-show="currentTab === 3"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>phase3</p>
+                                    <p>(新增 減法按鍵&負號顯示)</p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 負號</span>
+                                            <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 數字'0'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 數字'1'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 數字'2'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 數字'3'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 數字'4'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>6. 數字'5'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>7. 數字'6'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>8. 數字'7'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>9. 數字'8'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>10. 數字'9'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>11. 數字'00'</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 計算符號區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 計算符號'+'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 計算符號'-'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 計算符號'='</span>
+                                                <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/13.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 4"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>phase4</p>
+                                    <p>(新增 小數點按鍵</p>
+                                    <p>&小數點顯示)</p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 小數點</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 負號</span>
+                                            <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 數字'0'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 數字'1'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 數字'2'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 數字'3'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 數字'4'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>6. 數字'5'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>7. 數字'6'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>8. 數字'7'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>9. 數字'8'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>10. 數字'9'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>11. 數字'00'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>12. 數字'.'</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 計算符號區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 計算符號'+'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 計算符號'-'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 計算符號'x'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 計算符號'/'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 計算符號'='</span>
+                                                <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/14.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 5"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>phase5</p>
+                                    <p>(新增 科學符號顯示)</p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 小數點</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 負號</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>4. 科學符號</span>
+                                            <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 數字'0'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 數字'1'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 數字'2'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 數字'3'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 數字'4'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>6. 數字'5'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>7. 數字'6'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>8. 數字'7'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>9. 數字'8'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>10. 數字'9'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>11. 數字'00'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>12. 數字'.'</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 計算符號區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 計算符號'+'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 計算符號'-'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 計算符號'x'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 計算符號'/'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 計算符號'='</span>
+                                                <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/14.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 6"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                    <p>phase6</p>
+                                    <p>(新增 特殊按鍵)</p>
+                                    <p>1. 計算機</p>
+                                        <span class="text-white" for="">___</span>
+                                        <span>1. 顯示框</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 小數點</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 負號</span>
+                                            <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>4. 科學符號</span>
+                                            <br>
+                                        <span class="text-white" for="">___</span>
+                                        <span>2. 按鍵區</span>
+                                        <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>1. 數字區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 數字'0'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 數字'1'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 數字'2'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 數字'3'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 數字'4'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>6. 數字'5'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>7. 數字'6'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>8. 數字'7'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>9. 數字'8'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>10. 數字'9'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>11. 數字'00'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>12. 數字'.'</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>2. 計算符號區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 計算符號'+'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 計算符號'-'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>3. 計算符號'x'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>4. 計算符號'/'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>5. 計算符號'='</span>
+                                                <br>
+                                            <span class="text-white" for="">______</span>
+                                            <span>3. 特殊功能區</span>
+                                            <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>1. 刪除符號'AC'</span>
+                                                <br>
+                                                <span class="text-white" for="">_________</span>
+                                                <span>2. 刪除符號'D'</span>
+                                                <br>
+                                  </div>
+                                  <img class="w-3/5" src="./img/15.png" alt="">
+                              </div>
+                              <div 
+                                  x-show="currentTab === 7"
+                                  class="flex m-auto bg-white p-6 rounded-b rounded-tr shadow-md"
+                              >
+                                  <div class="w-2/5 h-72 overflow-y-scroll">
+                                      <p>- phase6 功能已全部完成</p>
+                                      <p>- 接著可以 開始進行 下個階段</p>
+                                  </div>
+                                  <img class="w-3/5" src="./img/15.png" alt="">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+
+            <template x-route="/step2/:id(\d+)">
+              <div class="px-16 py-4">
+                <!-- (T)可當做 子路由 -->
+                <div x-show="$router.params.id === '1'">
+                  step2-1
+                </div>
+                <div x-show="$router.params.id === '11'">
+                  step2-1-1
+                </div>
+                <div x-show="$router.params.id === '12'">
+                  step2-1-2
+                </div>
+              </div>
+            </template>
+
+            <template x-route="/step3/:id(\d+)">
+              <div class="px-16 py-4">
+                <!-- (T)可當做 子路由 -->
+                <div x-show="$router.params.id === '1'">
+                  step3-1
+                </div>
+                <div x-show="$router.params.id === '11'">
+                  step3-1-1
+                </div>
+                <div x-show="$router.params.id === '12'">
+                  step3-1-2
+                </div>
+              </div>
+            </template>
+
+            <template x-route="/step4/:id(\d+)">
+              <div class="px-16 py-4">
+                <!-- (T)可當做 子路由 -->
+                <div x-show="$router.params.id === '1'">
+                  step4-1
+                </div>
+                <div x-show="$router.params.id === '11'">
+                  step4-1-1
+                </div>
+                <div x-show="$router.params.id === '12'">
+                  step4-1-2
+                </div>
+              </div>
+            </template>
+            
+          </main>
+        </div>
+        <!-- 改成 文字說明 -->
+        <footer class="flex-none border-t">
+          <div class="px-16 py-4">
+            <p>123</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
